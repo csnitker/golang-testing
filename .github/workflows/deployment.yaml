@@ -5,6 +5,9 @@ on:
   release:
     types: # This configuration does not affect the page_build event above
       - released
+  tags:
+    - v0.*
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
