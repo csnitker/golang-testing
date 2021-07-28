@@ -16,8 +16,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Deploy
-        with:
-          REGION: ${{ matrix.region }}
-        run: |
-          echo "$REGION"
+        run: echo ${{ matrix.region }}
