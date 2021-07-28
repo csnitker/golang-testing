@@ -5,6 +5,10 @@ import (
 	"net/http"
 )
 
+func StrToPtr(v string) *string {
+	return &v
+}
+
 type Getter interface {
 	Get(url string) (*http.Response, error)
 }
