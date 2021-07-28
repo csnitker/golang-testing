@@ -25,7 +25,10 @@ checksum:
   name_template: "checksums.txt"
 dockers:
   - image_templates:
-      - csnitker/golang-testing
+      - "csnitker/golang-testing:{{ .Tag }}"
+      - "csnitker/golang-testing:v{{ .Major }}"
+      - "csnitker/golang-testing:v{{ .Major }}.{{ .Minor }}"
+      - "csnitker/golang-testing:latest"
     use: buildx
 snapshot:
   name_template: "{{ .Tag }}-next"
