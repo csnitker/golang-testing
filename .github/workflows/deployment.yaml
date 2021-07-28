@@ -3,10 +3,8 @@ name: Deploy
 on:
   workflow_dispatch:
   release:
-    types: # This configuration does not affect the page_build event above
-      - released
-  tags:
-    - v0.*
+    tags:
+      - v*
 
 jobs:
   deploy:
