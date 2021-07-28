@@ -23,6 +23,10 @@ archives:
       amd64: x86_64
 checksum:
   name_template: "checksums.txt"
+dockers:
+  - dockerfile: Dockerfile
+    use_buildx: true
+    binaries: [cliapp]
 snapshot:
   name_template: "{{ .Tag }}-next"
 changelog:
