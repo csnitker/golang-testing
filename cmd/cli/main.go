@@ -14,6 +14,8 @@ func FuncWithISSUEs(ctx context.Context) error {
 }
 
 func main() {
+	_ = FuncWithISSUEs(nil)
+
 	fmt.Println("vim-go")
 	fmt.Println("some other message!")
 }
