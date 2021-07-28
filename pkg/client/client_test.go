@@ -72,3 +72,29 @@ func TestClient_Do(t *testing.T) {
 		})
 	}
 }
+
+func TestStrToPtr(t *testing.T) {
+	type args struct {
+		v string
+	}
+	tests := []struct {
+		name string
+		args args
+		want *string
+	}{
+		{
+			name: "returns pointer to string",
+			args: args{
+				v: "testing",
+			},
+			want: StrToPtr("testing"),
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := StrToPtr(tt.args.v); *got != *tt.want {
+				t.Errorf("StrToPtr() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
