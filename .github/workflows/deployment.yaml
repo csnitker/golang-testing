@@ -1,9 +1,10 @@
 name: Deploy
 
 on:
+  workflow_dispatch:
   release:
     types: # This configuration does not affect the page_build event above
-      - created
+      - released
 jobs:
   deploy:
     runs-on: ubuntu-latest
